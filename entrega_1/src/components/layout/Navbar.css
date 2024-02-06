@@ -1,0 +1,14 @@
+
+.navbarFilters{
+  background-color: rgba(203, 5, 5, 0.823);
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  font-size: 1.25rem;
+  list-style:none;
+}
+
+.navbarFilters li:hover{
+  background-color: rgb(232, 232, 232); 
+  color: rgba(252, 10, 10, 0.823);
+}
