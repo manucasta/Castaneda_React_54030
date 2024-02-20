@@ -2,7 +2,17 @@
 
 import { PiShoppingCartSimpleFill } from "react-icons/pi";
 
-const CartWidget = () => {
+const CartWidget = ({items}) => {
+  let carrito = [];
+  console.log(items);
+  
+  const addCart = (productId) =>{
+      items.forEach(item => {
+      const selectedProduct = item.id = productId;
+      console.log (productId);
+    });
+    
+  }
   return (
     <div>
       <h2>Carrito</h2>

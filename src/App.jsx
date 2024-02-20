@@ -1,6 +1,6 @@
 
 import Navbar from "./components/layout/Navbar";
-import ProductCardContainer from "./components/pages/ProductCardContainer";
+import ItemListContainer from "./components/pages/ItemListContainer";
 
 function App() {
 
@@ -9,7 +9,7 @@ function App() {
       <h1>TIENDA ONLINE</h1>
       <Navbar />
 
-      <ProductCardContainer />
+      <ItemListContainer />
     </div>
   );
 }
