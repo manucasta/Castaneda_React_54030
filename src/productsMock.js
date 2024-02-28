@@ -6,7 +6,7 @@ export let products = [
     description: "Camiseta titular Independiente Temporada 23/24",
     price: 45000,
     stock: 10,
-    category: "Futbol",
+    category: "futbol",
   },
 
   {
@@ -16,7 +16,7 @@ export let products = [
     description: "Camiseta suplente Independiente Temporada 23/24",
     price: 45000,
     stock: 12,
-    category: "Futbol",
+    category: "futbol",
   },
 
   {
@@ -26,7 +26,7 @@ export let products = [
     description: "Short titular Independiente Temporada 23/24",
     price: 25000,
     stock: 15,
-    category: "Futbol",
+    category: "futbol",
   },
 
   {
@@ -36,7 +36,7 @@ export let products = [
     description: "Medias titulares Independiente Temporada 23/24",
     price: 15000,
     stock: 5,
-    category: "Futbol",
+    category: "futbol",
   },
 
   {
@@ -46,7 +46,7 @@ export let products = [
     description: "Track Jacket Independiente Temporada 23/24",
     price: 85000,
     stock: 4,
-    category: "Urbano",
+    category: "urbano",
   },
 
   {
@@ -56,6 +56,33 @@ export let products = [
     description: "CAI Shirt Edition Independiente Temporada 23/24",
     price: 30000,
     stock: 9,
-    category: "Urbano",
+    category: "urbano",
   },
 ];
+
+export const getProducts = () => {
+  return new Promise ( (resolve, reject) => {
+      if (products. length > 0){
+        setTimeout(() => {
+          resolve (products);
+        }, 2000)
+      } else {
+        reject ("No hay productos")
+      }
+  })
+}
+
+export const getProduct = (id) => {
+  return new Promise ((resolve, reject) => {
+    if (products.length > 0) {
+      const item = products.find (product => product.id === id);
+      setTimeout (() => {
+        if (item){
+          resolve (item);
+        } else {
+          reject (`No existe producto con id ${id}`)
+        }
+      },2000)
+    }
+  })
+}

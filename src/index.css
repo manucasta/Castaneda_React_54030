@@ -3,10 +3,6 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -27,7 +23,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   background-color: rgba(252, 10, 10, 0.823);
-  color: rgb(232, 232, 232);
+  color: rgb(253, 252, 252);
 }
 
 h1 {

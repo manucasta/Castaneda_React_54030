@@ -1,0 +1,10 @@
+
+.displayContainer {
+  display: flex;
+
+}
+
+.imgDetailContainer img{
+  width: 31.25rem;
+  margin-right: 3.125rem;
+}

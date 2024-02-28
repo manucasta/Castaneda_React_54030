@@ -8,6 +8,10 @@
   list-style:none;
 }
 
+.navbarFilters li{
+  color: rgb(232, 232, 232); 
+}
+
 .navbarFilters li:hover{
   background-color: rgb(232, 232, 232); 
   color: rgba(252, 10, 10, 0.823);

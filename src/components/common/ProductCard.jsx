@@ -1,6 +1,7 @@
-import React from 'react'
 
-export const ProductCard = ({id, title, img, description, price}) => {
+import {Link} from "react-router-dom"
+
+export const ProductCard = ({id, title, img, price}) => {
   return (
     <div
       style={{
@@ -17,9 +18,10 @@ export const ProductCard = ({id, title, img, description, price}) => {
         src={img}
         alt=""
       />
-      <h4>{description}</h4>
       <h4>${price}</h4>
-      <button>Agregar al Carrito</button>
+      <Link to={`/item/${id}`}>
+        <button>Ver detalle</button>
+      </Link>
     </div>
   );
 }
