@@ -1,5 +1,5 @@
 
-import { PiShoppingCartSimpleFill } from "react-icons/pi";
+import CartWidget from "../common/CartWidget";
 import "./Navbar.css"
 import { Link } from "react-router-dom";
 
@@ -28,7 +28,7 @@ const Navbar = () => {
           </Link>
           <Link to="/cart">
             <li>
-              Carrito <PiShoppingCartSimpleFill color="white" />
+              <CartWidget />
             </li>
           </Link>
         </ul>

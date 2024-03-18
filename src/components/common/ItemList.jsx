@@ -6,14 +6,14 @@ export const ItemList = ({items}) => {
     <>
       {items.map((item) => {
         return (
-          <ProductCard 
+          <ProductCard
             key={item.id}
-            id = {item.id}
+            id={item.id}
             title={item.title}
             img={item.img}
             description={item.description}
             price={item.price}
-          />   
+          />
         );
       })}
     </>

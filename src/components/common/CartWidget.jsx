@@ -1,13 +1,19 @@
+import { useContext } from "react"
+import { CartContext } from "../context/CartContext"
+import { PiShoppingCartSimpleFill } from "react-icons/pi";
+import { Badge } from "@mui/material";
 
-export const CartWidget = ({items}) => {
-  
+const CartWidget = () => {
+
+  const {getTotalItems} = useContext (CartContext);
+  let total= getTotalItems ();
+
   return (
-    <div>
-      <h2>Carrito</h2>
-      <div>
-        <h4>Total:</h4>
-      </div>
-    </div>
+    <>
+      <Badge badgeContent={total} color="white">
+        <PiShoppingCartSimpleFill color="white" />
+      </Badge>
+    </>
   );
 }
 

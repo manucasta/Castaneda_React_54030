@@ -4,6 +4,8 @@ import { ItemList } from "../../common/ItemList";
 import { getProducts, products } from "../../../productsMock";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { db } from "../../../firebaseConfig";
+import {collection, getDocs, query, where} from "firebase/firestore";
 
 const ItemListContainer = () => {
 
@@ -11,18 +13,26 @@ const ItemListContainer = () => {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+
   useEffect (() =>{
     setIsLoading(true)
-    getProducts ()
-      .then (resp => {
-        if (category){
-          const filteredItem = resp.filter ( (item) => item.category === category ); 
-          setItems (filteredItem)
-        }else{
-          setItems(resp);
-        }
-        setIsLoading(false);
+    
+    let productsCollection = collection (db, "products");
+    let consulta;
+    if (category) {
+      let productsCollectionFiltered = query 
+      (productsCollection, where("category", "==", category));
+      consulta = productsCollectionFiltered
+    } else{
+      consulta = productsCollection
+    }
+    getDocs (consulta)
+    .then (res => {
+      let newArray = res.docs.map ( (element) => {
+        return {...element.data(), id:element.id}
       })
+      setItems (newArray);
+    }).finally (()=> setIsLoading(false));
     },[category])
 
   return (
