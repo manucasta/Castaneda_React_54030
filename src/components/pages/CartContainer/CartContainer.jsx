@@ -1,6 +1,6 @@
 
 import { useContext } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import Swal from "sweetalert2";
 import "./CartContainer.css"
@@ -10,6 +10,8 @@ export const CartContainer = () => {
   const {cart, clearCart, removeProduct, getTotalPrice} = useContext (CartContext)
 
   let total = getTotalPrice ();
+
+  const isCartEmpty = cart.length === 0 || null;
 
   const alertClearCart = () => {
     Swal.fire({
@@ -59,12 +61,12 @@ export const CartContainer = () => {
           </div>
         ))}
       </div>
-      <button onClick={alertClearCart}>Clear Cart</button>
+      <button onClick={alertClearCart} disabled={isCartEmpty}>Clear Cart</button>
 
       <h3>Total: ${total}</h3>
-
+      
       <Link to="/checkout">
-        <button> Checkout </button>
+        <button disabled= {isCartEmpty}> Checkout </button>
       </Link>
     </>
   )

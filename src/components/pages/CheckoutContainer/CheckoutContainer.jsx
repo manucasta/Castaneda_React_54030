@@ -14,7 +14,9 @@ const CheckoutContainer = () => {
   })
 
   const {cart, getTotalPrice, clearCart} = useContext (CartContext);
+
   let total = getTotalPrice ();
+
   const [orderId, setOrderId] = useState (null);
 
   const sendForm = (event) => {
